@@ -8,8 +8,8 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Knowledge Base
   - Documentation
+  - Knowledge Base
   - SaaS
 url: >-
   https://raw.githubusercontent.com/api-evangelist/document360/refs/heads/main/apis.yml
@@ -27,8 +27,8 @@ apis:
     humanURL: https://apidocs.document360.com/
     baseURL: https://apihub.document360.io/v2
     tags:
-      - Knowledge Base
       - Documentation
+      - Knowledge Base
     properties:
       - type: Documentation
         url: https://apidocs.document360.com/
