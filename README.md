@@ -5,35 +5,38 @@ Document360 is a SaaS knowledge base platform that allows teams to create, manag
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+- **Type:** Index
 
 ## Tags:
 
- - Knowledge Base, Documentation, SaaS
+ - Documentation, Knowledge Base, SaaS
 
 ## Timestamps
 
-- **Created:** 2026-03-16 
-- **Modified:** 2026-03-16 
+- **Created:** 2026-03-16
+- **Modified:** 2026-04-28
 
 ## APIs
 
 ### Document360 API
-The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.
+The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.
 
 **Human URL:** [https://apidocs.document360.com/](https://apidocs.document360.com/)
 
+**Base URL:** `https://apihub.document360.io/v2`
 
 #### Tags:
 
- - Knowledge Base, Documentation
+ - Documentation, Knowledge Base
 
 #### Properties
 
 - [Documentation](https://apidocs.document360.com/)
 - [Getting Started](https://document360.com/blog/document360-api/)
+- [OpenAPI](openapi/document360-document360-api-openapi.yml)
+- [JSON Schema - Article](json-schema/document360-article-schema.json)
+- [JSON Schema - Category](json-schema/document360-category-schema.json)
+- [JSON-LD Context](json-ld/document360-context.jsonld)
 
 ## Common Properties
 

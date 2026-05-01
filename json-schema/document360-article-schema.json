@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/document360/refs/heads/main/json-schema/document360-article-schema.json",
+  "title": "Document360 Article",
+  "description": "An article published in a Document360 knowledge base project version.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the article."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the article."
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL slug for the article."
+    },
+    "content": {
+      "type": "string",
+      "description": "Rendered HTML content of the article."
+    },
+    "contentMarkdown": {
+      "type": "string",
+      "description": "Markdown source of the article."
+    },
+    "categoryId": {
+      "type": "string",
+      "description": "Identifier of the category this article belongs to."
+    },
+    "projectVersionId": {
+      "type": "string",
+      "description": "Identifier of the project version containing the article."
+    },
+    "languageCode": {
+      "type": "string",
+      "description": "Language code (e.g., en, de) for the article."
+    },
+    "status": {
+      "type": "string",
+      "description": "Publication status of the article (e.g., draft, published)."
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the article was created."
+    },
+    "modifiedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the article was last modified."
+    }
+  },
+  "required": ["id", "title"]
+}

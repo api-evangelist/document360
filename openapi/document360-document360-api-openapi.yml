@@ -1,0 +1,387 @@
+openapi: 3.1.0
+info:
+  title: Document360 API
+  description: >-
+    The Document360 API provides programmatic access to manage knowledge base
+    projects, articles, categories, drives, files, users, and teams. It enables
+    integrating Document360 documentation workflows into CI/CD pipelines and
+    external applications.
+  version: 2.0.0
+  contact:
+    name: Document360
+    url: https://document360.com/
+servers:
+  - url: https://apihub.document360.io/v2
+    description: Document360 API Hub
+security:
+  - apiToken: []
+paths:
+  /ProjectVersions:
+    get:
+      operationId: listProjectVersions
+      summary: List Project Versions
+      description: Retrieves the list of project versions in a Document360 knowledge base.
+      tags:
+        - Project Versions
+      responses:
+        '200':
+          description: A list of project versions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProjectVersion'
+  /Articles:
+    get:
+      operationId: listArticles
+      summary: List Articles
+      description: Retrieves articles within a Document360 knowledge base project.
+      tags:
+        - Articles
+      parameters:
+        - name: projectVersionId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of articles.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Article'
+    post:
+      operationId: createArticle
+      summary: Create Article
+      description: Creates a new article in the knowledge base.
+      tags:
+        - Articles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+      responses:
+        '201':
+          description: Article created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+  /Articles/{id}:
+    get:
+      operationId: getArticle
+      summary: Get Article
+      description: Retrieves a single article by its identifier.
+      tags:
+        - Articles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The requested article.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+    put:
+      operationId: updateArticle
+      summary: Update Article
+      description: Updates an existing article.
+      tags:
+        - Articles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Article'
+      responses:
+        '200':
+          description: Article updated.
+    delete:
+      operationId: deleteArticle
+      summary: Delete Article
+      description: Deletes an article.
+      tags:
+        - Articles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Article deleted.
+  /Categories:
+    get:
+      operationId: listCategories
+      summary: List Categories
+      description: Retrieves categories within a project version.
+      tags:
+        - Categories
+      parameters:
+        - name: projectVersionId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of categories.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+    post:
+      operationId: createCategory
+      summary: Create Category
+      description: Creates a new category.
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '201':
+          description: Category created.
+  /Categories/{id}:
+    get:
+      operationId: getCategory
+      summary: Get Category
+      tags:
+        - Categories
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The requested category.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+    put:
+      operationId: updateCategory
+      summary: Update Category
+      tags:
+        - Categories
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '200':
+          description: Category updated.
+    delete:
+      operationId: deleteCategory
+      summary: Delete Category
+      tags:
+        - Categories
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Category deleted.
+  /Drive/Folders:
+    get:
+      operationId: listDriveFolders
+      summary: List Drive Folders
+      description: Retrieves folders in the Document360 Drive.
+      tags:
+        - Drive
+      responses:
+        '200':
+          description: A list of drive folders.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DriveFolder'
+  /Drive/Files:
+    get:
+      operationId: listDriveFiles
+      summary: List Drive Files
+      description: Retrieves files in the Document360 Drive.
+      tags:
+        - Drive
+      responses:
+        '200':
+          description: A list of drive files.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DriveFile'
+  /Users:
+    get:
+      operationId: listUsers
+      summary: List Users
+      description: Retrieves users associated with the project.
+      tags:
+        - Users
+      responses:
+        '200':
+          description: A list of users.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+  /Teams:
+    get:
+      operationId: listTeams
+      summary: List Teams
+      description: Retrieves teams in the knowledge base.
+      tags:
+        - Teams
+      responses:
+        '200':
+          description: A list of teams.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Team'
+components:
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: api_token
+  schemas:
+    ProjectVersion:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        versionNumber:
+          type: string
+        languageCode:
+          type: string
+    Article:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        slug:
+          type: string
+        content:
+          type: string
+        contentMarkdown:
+          type: string
+        categoryId:
+          type: string
+        projectVersionId:
+          type: string
+        languageCode:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        modifiedAt:
+          type: string
+          format: date-time
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        order:
+          type: integer
+        parentCategoryId:
+          type: string
+        projectVersionId:
+          type: string
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        parentId:
+          type: string
+    DriveFile:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        url:
+          type: string
+        folderId:
+          type: string
+        size:
+          type: integer
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        emailId:
+          type: string
+        roleName:
+          type: string
+    Team:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        memberCount:
+          type: integer

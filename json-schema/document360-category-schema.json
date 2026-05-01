@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/document360/refs/heads/main/json-schema/document360-category-schema.json",
+  "title": "Document360 Category",
+  "description": "A category that organizes articles within a Document360 knowledge base project version.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the category."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the category."
+    },
+    "order": {
+      "type": "integer",
+      "description": "Display order of the category within its parent."
+    },
+    "parentCategoryId": {
+      "type": "string",
+      "description": "Identifier of the parent category, if nested."
+    },
+    "projectVersionId": {
+      "type": "string",
+      "description": "Identifier of the project version containing the category."
+    }
+  },
+  "required": ["id", "title"]
+}
