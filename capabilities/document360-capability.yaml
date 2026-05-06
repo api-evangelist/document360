@@ -1,0 +1,594 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Document360 API
+  description: The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives,
+    files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external
+    applications.
+  tags:
+  - Document360
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: document360
+    baseUri: https://apihub.document360.io/v2
+    description: Document360 API HTTP API.
+    authentication:
+      type: apikey
+      in: header
+      name: api_token
+      value: '{{DOCUMENT360_TOKEN}}'
+    resources:
+    - name: projectversions
+      path: /ProjectVersions
+      operations:
+      - name: listprojectversions
+        method: GET
+        description: List Project Versions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: articles
+      path: /Articles
+      operations:
+      - name: listarticles
+        method: GET
+        description: List Articles
+        inputParameters:
+        - name: projectVersionId
+          in: query
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createarticle
+        method: POST
+        description: Create Article
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: articles-id
+      path: /Articles/{id}
+      operations:
+      - name: getarticle
+        method: GET
+        description: Get Article
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatearticle
+        method: PUT
+        description: Update Article
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletearticle
+        method: DELETE
+        description: Delete Article
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: categories
+      path: /Categories
+      operations:
+      - name: listcategories
+        method: GET
+        description: List Categories
+        inputParameters:
+        - name: projectVersionId
+          in: query
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcategory
+        method: POST
+        description: Create Category
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: categories-id
+      path: /Categories/{id}
+      operations:
+      - name: getcategory
+        method: GET
+        description: Get Category
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatecategory
+        method: PUT
+        description: Update Category
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecategory
+        method: DELETE
+        description: Delete Category
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: drive-folders
+      path: /Drive/Folders
+      operations:
+      - name: listdrivefolders
+        method: GET
+        description: List Drive Folders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: drive-files
+      path: /Drive/Files
+      operations:
+      - name: listdrivefiles
+        method: GET
+        description: List Drive Files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: users
+      path: /Users
+      operations:
+      - name: listusers
+        method: GET
+        description: List Users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: teams
+      path: /Teams
+      operations:
+      - name: listteams
+        method: GET
+        description: List Teams
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: document360-rest
+    description: REST adapter for Document360 API.
+    resources:
+    - path: /ProjectVersions
+      name: listprojectversions
+      operations:
+      - method: GET
+        name: listprojectversions
+        description: List Project Versions
+        call: document360.listprojectversions
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Articles
+      name: listarticles
+      operations:
+      - method: GET
+        name: listarticles
+        description: List Articles
+        call: document360.listarticles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Articles
+      name: createarticle
+      operations:
+      - method: POST
+        name: createarticle
+        description: Create Article
+        call: document360.createarticle
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Articles/{id}
+      name: getarticle
+      operations:
+      - method: GET
+        name: getarticle
+        description: Get Article
+        call: document360.getarticle
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Articles/{id}
+      name: updatearticle
+      operations:
+      - method: PUT
+        name: updatearticle
+        description: Update Article
+        call: document360.updatearticle
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Articles/{id}
+      name: deletearticle
+      operations:
+      - method: DELETE
+        name: deletearticle
+        description: Delete Article
+        call: document360.deletearticle
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Categories
+      name: listcategories
+      operations:
+      - method: GET
+        name: listcategories
+        description: List Categories
+        call: document360.listcategories
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Categories
+      name: createcategory
+      operations:
+      - method: POST
+        name: createcategory
+        description: Create Category
+        call: document360.createcategory
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Categories/{id}
+      name: getcategory
+      operations:
+      - method: GET
+        name: getcategory
+        description: Get Category
+        call: document360.getcategory
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Categories/{id}
+      name: updatecategory
+      operations:
+      - method: PUT
+        name: updatecategory
+        description: Update Category
+        call: document360.updatecategory
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Categories/{id}
+      name: deletecategory
+      operations:
+      - method: DELETE
+        name: deletecategory
+        description: Delete Category
+        call: document360.deletecategory
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Drive/Folders
+      name: listdrivefolders
+      operations:
+      - method: GET
+        name: listdrivefolders
+        description: List Drive Folders
+        call: document360.listdrivefolders
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Drive/Files
+      name: listdrivefiles
+      operations:
+      - method: GET
+        name: listdrivefiles
+        description: List Drive Files
+        call: document360.listdrivefiles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Users
+      name: listusers
+      operations:
+      - method: GET
+        name: listusers
+        description: List Users
+        call: document360.listusers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Teams
+      name: listteams
+      operations:
+      - method: GET
+        name: listteams
+        description: List Teams
+        call: document360.listteams
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: document360-mcp
+    transport: http
+    description: MCP adapter for Document360 API for AI agent use.
+    tools:
+    - name: listprojectversions
+      description: List Project Versions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.listprojectversions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listarticles
+      description: List Articles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.listarticles
+      with:
+        projectVersionId: tools.projectVersionId
+      inputParameters:
+      - name: projectVersionId
+        type: string
+        description: projectVersionId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createarticle
+      description: Create Article
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: document360.createarticle
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getarticle
+      description: Get Article
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.getarticle
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatearticle
+      description: Update Article
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: document360.updatearticle
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletearticle
+      description: Delete Article
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: document360.deletearticle
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcategories
+      description: List Categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.listcategories
+      with:
+        projectVersionId: tools.projectVersionId
+      inputParameters:
+      - name: projectVersionId
+        type: string
+        description: projectVersionId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcategory
+      description: Create Category
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: document360.createcategory
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcategory
+      description: Get Category
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.getcategory
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatecategory
+      description: Update Category
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: document360.updatecategory
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletecategory
+      description: Delete Category
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: document360.deletecategory
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdrivefolders
+      description: List Drive Folders
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.listdrivefolders
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdrivefiles
+      description: List Drive Files
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.listdrivefiles
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listusers
+      description: List Users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.listusers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listteams
+      description: List Teams
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360.listteams
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    DOCUMENT360_TOKEN: DOCUMENT360_TOKEN
