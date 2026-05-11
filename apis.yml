@@ -57,6 +57,65 @@ common:
     url: https://document360.com/privacy-policy/
   - type: Support
     url: https://support.document360.com/
+  - type: Integrations
+    url: https://document360.com/integrations/
+integrations:
+  - name: Build with Document360
+  - name: buyvsbuild
+  - name: en flag
+  - name: pt-br flag
+  - name: fr flag
+  - name: es flag
+  - name: de flag
+  - name: Document360
+  - name: Gradient
+  - name: 'McDonald''s'
+  - name: NHS
+  - name: Virgin Red
+  - name: Hp
+  - name: Puma
+  - name: Samsung Ads
+  - name: Naver
+  - name: Medallia
+  - name: Freshdesk
+  - name: Zendesk
+  - name: Intercom
+  - name: Drift
+  - name: Slack
+  - name: Teams
+  - name: Crowdin
+  - name: Chrome
+  - name: Zapier
+  - name: Salesforce
+  - name: Github
+  - name: Google Analytics
+  - name: Google Tag Manager
+  - name: Hotjar
+  - name: Amplitude
+  - name: Mixpanel
+  - name: Segment
+  - name: FullStory
+  - name: Heap
+  - name: LiveChat
+  - name: Crisp
+  - name: Gorgias
+  - name: Olark
+  - name: FreshChat
+  - name: Freshmarketer
+  - name: Google Optimize
+  - name: VWO
+  - name: Zoho PageSense
+  - name: Disqus
+  - name: Commento
+  - name: Mogli Technologies, LLC
+  - name: Arlington/Roe
+  - name: Whatfix
+  - name: Gradient shape
+  - name: GDPR
+  - name: SOC2
+  - name: ISO
+  - name: D360-ratings
+  - name: kovai.co
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
