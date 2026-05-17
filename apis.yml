@@ -32,7 +32,7 @@ apis:
     properties:
       - type: Documentation
         url: https://apidocs.document360.com/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://document360.com/blog/document360-api/
       - type: OpenAPI
         url: openapi/document360-document360-api-openapi.yml
@@ -40,7 +40,7 @@ apis:
         url: json-schema/document360-article-schema.json
       - type: JSON Schema
         url: json-schema/document360-category-schema.json
-      - type: JSON-LD
+      - type: JSONLD
         url: json-ld/document360-context.jsonld
 common:
   - type: Portal
@@ -51,9 +51,9 @@ common:
     url: https://document360.com/pricing/
   - type: Blog
     url: https://document360.com/blog/
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://document360.com/terms-of-service/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://document360.com/privacy-policy/
   - type: Support
     url: https://support.document360.com/
