@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Document360 API — Teams
+  description: 'Document360 API — Teams. 1 operations. Lead operation: List Teams. Self-contained Naftiko capability covering
+    one Document360 business surface.'
+  tags:
+  - Document360
+  - Teams
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DOCUMENT360_API_KEY: DOCUMENT360_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: document360-teams
+    baseUri: https://apihub.document360.io/v2
+    description: Document360 API — Teams business capability. Self-contained, no shared references.
+    resources:
+    - name: Teams
+      path: /Teams
+      operations:
+      - name: listteams
+        method: GET
+        description: List Teams
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: api_token
+      value: '{{env.DOCUMENT360_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: document360-teams-rest
+    port: 8080
+    description: REST adapter for Document360 API — Teams. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/teams
+      name: teams
+      description: REST surface for Teams.
+      operations:
+      - method: GET
+        name: listteams
+        description: List Teams
+        call: document360-teams.listteams
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: document360-teams-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Document360 API — Teams. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-teams
+      description: List Teams
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360-teams.listteams
+      outputParameters:
+      - type: object
+        mapping: $.

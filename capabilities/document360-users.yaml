@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Document360 API — Users
+  description: 'Document360 API — Users. 1 operations. Lead operation: List Users. Self-contained Naftiko capability covering
+    one Document360 business surface.'
+  tags:
+  - Document360
+  - Users
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DOCUMENT360_API_KEY: DOCUMENT360_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: document360-users
+    baseUri: https://apihub.document360.io/v2
+    description: Document360 API — Users business capability. Self-contained, no shared references.
+    resources:
+    - name: Users
+      path: /Users
+      operations:
+      - name: listusers
+        method: GET
+        description: List Users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: api_token
+      value: '{{env.DOCUMENT360_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: document360-users-rest
+    port: 8080
+    description: REST adapter for Document360 API — Users. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/users
+      name: users
+      description: REST surface for Users.
+      operations:
+      - method: GET
+        name: listusers
+        description: List Users
+        call: document360-users.listusers
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: document360-users-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Document360 API — Users. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-users
+      description: List Users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360-users.listusers
+      outputParameters:
+      - type: object
+        mapping: $.

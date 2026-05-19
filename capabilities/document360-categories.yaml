@@ -1,0 +1,232 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Document360 API — Categories
+  description: 'Document360 API — Categories. 5 operations. Lead operation: List Categories. Self-contained Naftiko capability
+    covering one Document360 business surface.'
+  tags:
+  - Document360
+  - Categories
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DOCUMENT360_API_KEY: DOCUMENT360_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: document360-categories
+    baseUri: https://apihub.document360.io/v2
+    description: Document360 API — Categories business capability. Self-contained, no shared references.
+    resources:
+    - name: Categories
+      path: /Categories
+      operations:
+      - name: listcategories
+        method: GET
+        description: List Categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectVersionId
+          in: query
+          type: string
+          required: true
+      - name: createcategory
+        method: POST
+        description: Create Category
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: Categories-id
+      path: /Categories/{id}
+      operations:
+      - name: getcategory
+        method: GET
+        description: Get Category
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+      - name: updatecategory
+        method: PUT
+        description: Update Category
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletecategory
+        method: DELETE
+        description: Delete Category
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: api_token
+      value: '{{env.DOCUMENT360_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: document360-categories-rest
+    port: 8080
+    description: REST adapter for Document360 API — Categories. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/categories
+      name: categories
+      description: REST surface for Categories.
+      operations:
+      - method: GET
+        name: listcategories
+        description: List Categories
+        call: document360-categories.listcategories
+        with:
+          projectVersionId: rest.projectVersionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcategory
+        description: Create Category
+        call: document360-categories.createcategory
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/categories/{id}
+      name: categories-id
+      description: REST surface for Categories-id.
+      operations:
+      - method: GET
+        name: getcategory
+        description: Get Category
+        call: document360-categories.getcategory
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatecategory
+        description: Update Category
+        call: document360-categories.updatecategory
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletecategory
+        description: Delete Category
+        call: document360-categories.deletecategory
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: document360-categories-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Document360 API — Categories. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-categories
+      description: List Categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360-categories.listcategories
+      with:
+        projectVersionId: tools.projectVersionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-category
+      description: Create Category
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: document360-categories.createcategory
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-category
+      description: Get Category
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360-categories.getcategory
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-category
+      description: Update Category
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: document360-categories.updatecategory
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-category
+      description: Delete Category
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: document360-categories.deletecategory
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.

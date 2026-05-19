@@ -1,0 +1,232 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Document360 API — Articles
+  description: 'Document360 API — Articles. 5 operations. Lead operation: List Articles. Self-contained Naftiko capability
+    covering one Document360 business surface.'
+  tags:
+  - Document360
+  - Articles
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DOCUMENT360_API_KEY: DOCUMENT360_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: document360-articles
+    baseUri: https://apihub.document360.io/v2
+    description: Document360 API — Articles business capability. Self-contained, no shared references.
+    resources:
+    - name: Articles
+      path: /Articles
+      operations:
+      - name: listarticles
+        method: GET
+        description: List Articles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectVersionId
+          in: query
+          type: string
+          required: true
+      - name: createarticle
+        method: POST
+        description: Create Article
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: Articles-id
+      path: /Articles/{id}
+      operations:
+      - name: getarticle
+        method: GET
+        description: Get Article
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+      - name: updatearticle
+        method: PUT
+        description: Update Article
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletearticle
+        method: DELETE
+        description: Delete Article
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: api_token
+      value: '{{env.DOCUMENT360_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: document360-articles-rest
+    port: 8080
+    description: REST adapter for Document360 API — Articles. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/articles
+      name: articles
+      description: REST surface for Articles.
+      operations:
+      - method: GET
+        name: listarticles
+        description: List Articles
+        call: document360-articles.listarticles
+        with:
+          projectVersionId: rest.projectVersionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createarticle
+        description: Create Article
+        call: document360-articles.createarticle
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/articles/{id}
+      name: articles-id
+      description: REST surface for Articles-id.
+      operations:
+      - method: GET
+        name: getarticle
+        description: Get Article
+        call: document360-articles.getarticle
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatearticle
+        description: Update Article
+        call: document360-articles.updatearticle
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletearticle
+        description: Delete Article
+        call: document360-articles.deletearticle
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: document360-articles-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Document360 API — Articles. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: list-articles
+      description: List Articles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360-articles.listarticles
+      with:
+        projectVersionId: tools.projectVersionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-article
+      description: Create Article
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: document360-articles.createarticle
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-article
+      description: Get Article
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: document360-articles.getarticle
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-article
+      description: Update Article
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: document360-articles.updatearticle
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-article
+      description: Delete Article
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: document360-articles.deletearticle
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
