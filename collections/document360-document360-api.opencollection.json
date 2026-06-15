@@ -1,0 +1,303 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Document360 API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_token",
+      "value": "{{api_token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Project Versions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Project Versions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/ProjectVersions"
+          },
+          "docs": "Retrieves the list of project versions in a Document360 knowledge base."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Articles",
+            "params": [
+              {
+                "name": "projectVersionId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves articles within a Document360 knowledge base project."
+        },
+        {
+          "info": {
+            "name": "Create Article",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://apihub.document360.io/v2/Articles",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new article in the knowledge base."
+        },
+        {
+          "info": {
+            "name": "Get Article",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a single article by its identifier."
+        },
+        {
+          "info": {
+            "name": "Update Article",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://apihub.document360.io/v2/Articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing article."
+        },
+        {
+          "info": {
+            "name": "Delete Article",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://apihub.document360.io/v2/Articles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an article."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Categories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Categories",
+            "params": [
+              {
+                "name": "projectVersionId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves categories within a project version."
+        },
+        {
+          "info": {
+            "name": "Create Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://apihub.document360.io/v2/Categories",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new category."
+        },
+        {
+          "info": {
+            "name": "Get Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Categories/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Category"
+        },
+        {
+          "info": {
+            "name": "Update Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://apihub.document360.io/v2/Categories/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Category"
+        },
+        {
+          "info": {
+            "name": "Delete Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://apihub.document360.io/v2/Categories/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete Category"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Drive",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Drive Folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Drive/Folders"
+          },
+          "docs": "Retrieves folders in the Document360 Drive."
+        },
+        {
+          "info": {
+            "name": "List Drive Files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Drive/Files"
+          },
+          "docs": "Retrieves files in the Document360 Drive."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Users"
+          },
+          "docs": "Retrieves users associated with the project."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Teams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Teams"
+          },
+          "docs": "Retrieves teams in the knowledge base."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
