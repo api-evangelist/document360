@@ -5,7 +5,7 @@ description: >-
   bases and documentation portals. It supports version control, categories, team collaboration, analytics, and an API
   for integrating documentation into external workflows.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Documentation
   - Knowledge Base
