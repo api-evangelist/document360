@@ -33,9 +33,9 @@ apis:
         url: https://document360.com/blog/document360-api/
       - type: OpenAPI
         url: openapi/document360-document360-api-openapi.yml
-      - type: JSON Schema
+      - type: JSONSchema
         url: json-schema/document360-article-schema.json
-      - type: JSON Schema
+      - type: JSONSchema
         url: json-schema/document360-category-schema.json
       - type: JSONLD
         url: json-ld/document360-context.jsonld
