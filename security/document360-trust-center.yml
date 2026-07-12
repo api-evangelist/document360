@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://document360.com/compliance/soc2/
+url: https://document360.com/compliance/soc2/
+certifications:
+- SOC 2
+evidence:
+- source: https://document360.com/compliance/soc2/
+  keywords:
+  - soc 2
+  - soc2

@@ -40,6 +40,12 @@ apis:
       - type: JSONLD
         url: json-ld/document360-context.jsonld
 common:
+  - type: TrustCenter
+    url: security/document360-trust-center.yml
+  - type: DomainSecurity
+    url: security/document360-domain-security.yml
+  - type: Authentication
+    url: authentication/document360-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/document360
   - type: LinkedIn
