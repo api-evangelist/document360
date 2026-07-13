@@ -5,7 +5,7 @@
       "source": "https://document360.com/blog/feed/",
       "feed_url": "https://document360.com/blog/feed/",
       "title": "",
-      "saved": 1,
+      "saved": 0,
       "method": "feed"
     },
     {
@@ -23,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 24,
-  "fetched": "2026-06-27T12:03:07Z"
+  "post_count": 32,
+  "fetched": "2026-07-11T11:50:51Z"
 }
