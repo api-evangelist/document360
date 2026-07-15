@@ -40,6 +40,8 @@ apis:
       - type: JSONLD
         url: json-ld/document360-context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/document360-agentic-access.yml
   - type: TrustCenter
     url: security/document360-trust-center.yml
   - type: DomainSecurity
