@@ -1,0 +1,77 @@
+openapi: 3.1.0
+info:
+  title: Document360 Articles Drive API
+  description: The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.
+  version: 2.0.0
+  contact:
+    name: Document360
+    url: https://document360.com/
+servers:
+- url: https://apihub.document360.io/v2
+  description: Document360 API Hub
+security:
+- apiToken: []
+tags:
+- name: Drive
+paths:
+  /Drive/Folders:
+    get:
+      operationId: listDriveFolders
+      summary: List Drive Folders
+      description: Retrieves folders in the Document360 Drive.
+      tags:
+      - Drive
+      responses:
+        '200':
+          description: A list of drive folders.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DriveFolder'
+  /Drive/Files:
+    get:
+      operationId: listDriveFiles
+      summary: List Drive Files
+      description: Retrieves files in the Document360 Drive.
+      tags:
+      - Drive
+      responses:
+        '200':
+          description: A list of drive files.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DriveFile'
+components:
+  schemas:
+    DriveFile:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        url:
+          type: string
+        folderId:
+          type: string
+        size:
+          type: integer
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        parentId:
+          type: string
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: api_token

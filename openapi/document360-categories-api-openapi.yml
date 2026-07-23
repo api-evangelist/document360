@@ -1,0 +1,126 @@
+openapi: 3.1.0
+info:
+  title: Document360 Articles Categories API
+  description: The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.
+  version: 2.0.0
+  contact:
+    name: Document360
+    url: https://document360.com/
+servers:
+- url: https://apihub.document360.io/v2
+  description: Document360 API Hub
+security:
+- apiToken: []
+tags:
+- name: Categories
+paths:
+  /Categories:
+    get:
+      operationId: listCategories
+      summary: List Categories
+      description: Retrieves categories within a project version.
+      tags:
+      - Categories
+      parameters:
+      - name: projectVersionId
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of categories.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+    post:
+      operationId: createCategory
+      summary: Create Category
+      description: Creates a new category.
+      tags:
+      - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '201':
+          description: Category created.
+  /Categories/{id}:
+    get:
+      operationId: getCategory
+      summary: Get Category
+      tags:
+      - Categories
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The requested category.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+    put:
+      operationId: updateCategory
+      summary: Update Category
+      tags:
+      - Categories
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '200':
+          description: Category updated.
+    delete:
+      operationId: deleteCategory
+      summary: Delete Category
+      tags:
+      - Categories
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Category deleted.
+components:
+  schemas:
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        order:
+          type: integer
+        parentCategoryId:
+          type: string
+        projectVersionId:
+          type: string
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: api_token

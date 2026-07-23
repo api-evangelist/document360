@@ -1,0 +1,52 @@
+openapi: 3.1.0
+info:
+  title: Document360 Articles Users API
+  description: The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.
+  version: 2.0.0
+  contact:
+    name: Document360
+    url: https://document360.com/
+servers:
+- url: https://apihub.document360.io/v2
+  description: Document360 API Hub
+security:
+- apiToken: []
+tags:
+- name: Users
+paths:
+  /Users:
+    get:
+      operationId: listUsers
+      summary: List Users
+      description: Retrieves users associated with the project.
+      tags:
+      - Users
+      responses:
+        '200':
+          description: A list of users.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        emailId:
+          type: string
+        roleName:
+          type: string
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: header
+      name: api_token
