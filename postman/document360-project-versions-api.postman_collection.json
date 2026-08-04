@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "4115d412-deb1-46f3-ab11-76d3231aad13",
+    "name": "Document360 Articles Project Versions API",
+    "description": "The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.\n\nContact Support:\n Name: Document360",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:31:38.000Z",
+    "updatedAt": "2026-07-28T01:31:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4115d412-deb1-46f3-ab11-76d3231aad13"
+  },
+  "item": [
+    {
+      "name": "ProjectVersions",
+      "item": [
+        {
+          "name": "List Project Versions",
+          "id": "88c0aaa7-1ae9-4742-9391-ef58f8db53b4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/ProjectVersions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ProjectVersions"
+              ]
+            },
+            "description": "Retrieves the list of project versions in a Document360 knowledge base."
+          },
+          "response": [
+            {
+              "id": "d0183b63-9fc8-4120-a071-9d699d5023b9",
+              "name": "A list of project versions.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/ProjectVersions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ProjectVersions"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"versionNumber\": \"<string>\",\n    \"languageCode\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"versionNumber\": \"<string>\",\n    \"languageCode\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:31:39.000Z",
+              "updatedAt": "2026-07-28T01:31:39.000Z",
+              "uid": "35240-d0183b63-9fc8-4120-a071-9d699d5023b9"
+            }
+          ],
+          "createdAt": "2026-07-28T01:31:39.000Z",
+          "updatedAt": "2026-07-28T01:31:39.000Z",
+          "uid": "35240-88c0aaa7-1ae9-4742-9391-ef58f8db53b4"
+        }
+      ],
+      "id": "9f8f1525-225d-4c23-a51c-3d9852c6b512",
+      "createdAt": "2026-07-28T01:31:39.000Z",
+      "updatedAt": "2026-07-28T01:31:39.000Z",
+      "uid": "35240-9f8f1525-225d-4c23-a51c-3d9852c6b512"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://apihub.document360.io/v2"
+    }
+  ]
+}

@@ -1,0 +1,495 @@
+{
+  "info": {
+    "_postman_id": "4b761fff-2f70-4ba9-85d1-aae4921c9a91",
+    "name": "Document360 Articles Categories API",
+    "description": "The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.\n\nContact Support:\n Name: Document360",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:31:36.000Z",
+    "updatedAt": "2026-07-28T01:31:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4b761fff-2f70-4ba9-85d1-aae4921c9a91"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Category",
+              "id": "ca0928a0-ded8-4d3f-8899-0e0c74e40b7a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Categories/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "840124b8-cbe2-4d90-a494-670d92f12e7d",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "425c3826-b3dd-4be6-9939-4c482832460d",
+                  "name": "The requested category.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "api_token",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/Categories/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "Categories",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"order\": \"<integer>\",\n  \"parentCategoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:31:37.000Z",
+                  "updatedAt": "2026-07-28T01:31:37.000Z",
+                  "uid": "35240-425c3826-b3dd-4be6-9939-4c482832460d"
+                }
+              ],
+              "createdAt": "2026-07-28T01:31:37.000Z",
+              "updatedAt": "2026-07-28T01:31:37.000Z",
+              "uid": "35240-ca0928a0-ded8-4d3f-8899-0e0c74e40b7a"
+            },
+            {
+              "name": "Update Category",
+              "id": "df113f54-3972-40c0-a44f-71dad97be19c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"order\": \"<integer>\",\n  \"parentCategoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/Categories/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "41a3102c-5eae-4066-bc52-3f89d29f5992",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "6087e9b9-21ad-4a62-8404-2a59fda6091e",
+                  "name": "Category updated.",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "api_token",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"order\": \"<integer>\",\n  \"parentCategoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/Categories/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "Categories",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:31:37.000Z",
+                  "updatedAt": "2026-07-28T01:31:37.000Z",
+                  "uid": "35240-6087e9b9-21ad-4a62-8404-2a59fda6091e"
+                }
+              ],
+              "createdAt": "2026-07-28T01:31:37.000Z",
+              "updatedAt": "2026-07-28T01:31:37.000Z",
+              "uid": "35240-df113f54-3972-40c0-a44f-71dad97be19c"
+            },
+            {
+              "name": "Delete Category",
+              "id": "508fceb5-7c81-42ee-a0ea-486a0371bf7a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/Categories/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0eb0d2e6-8c28-44dc-b067-23dace1aeba6",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "e425480c-c952-44ea-bf18-10dc3cecadf8",
+                  "name": "Category deleted.",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "api_token",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/Categories/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "Categories",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "No Content",
+                  "code": 204,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:31:37.000Z",
+                  "updatedAt": "2026-07-28T01:31:37.000Z",
+                  "uid": "35240-e425480c-c952-44ea-bf18-10dc3cecadf8"
+                }
+              ],
+              "createdAt": "2026-07-28T01:31:37.000Z",
+              "updatedAt": "2026-07-28T01:31:37.000Z",
+              "uid": "35240-508fceb5-7c81-42ee-a0ea-486a0371bf7a"
+            }
+          ],
+          "id": "b0bf50a5-1777-4a3e-ae71-e823c67f3b48",
+          "createdAt": "2026-07-28T01:31:37.000Z",
+          "updatedAt": "2026-07-28T01:31:37.000Z",
+          "uid": "35240-b0bf50a5-1777-4a3e-ae71-e823c67f3b48"
+        },
+        {
+          "name": "List Categories",
+          "id": "03e4cc2a-3b35-4649-aac9-bc2820cd8a5b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Categories?projectVersionId=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Categories"
+              ],
+              "query": [
+                {
+                  "description": "(Required) ",
+                  "key": "projectVersionId",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Retrieves categories within a project version."
+          },
+          "response": [
+            {
+              "id": "27c86dcb-1ebc-4ce7-aa66-fb4c11a61d7d",
+              "name": "A list of categories.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Categories?projectVersionId=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Categories"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) ",
+                      "key": "projectVersionId",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"title\": \"<string>\",\n    \"order\": \"<integer>\",\n    \"parentCategoryId\": \"<string>\",\n    \"projectVersionId\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"title\": \"<string>\",\n    \"order\": \"<integer>\",\n    \"parentCategoryId\": \"<string>\",\n    \"projectVersionId\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:31:37.000Z",
+              "updatedAt": "2026-07-28T01:31:37.000Z",
+              "uid": "35240-27c86dcb-1ebc-4ce7-aa66-fb4c11a61d7d"
+            }
+          ],
+          "createdAt": "2026-07-28T01:31:37.000Z",
+          "updatedAt": "2026-07-28T01:31:37.000Z",
+          "uid": "35240-03e4cc2a-3b35-4649-aac9-bc2820cd8a5b"
+        },
+        {
+          "name": "Create Category",
+          "id": "b1ad920c-2fb9-4bd8-b3b7-db30b6dd5790",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"order\": \"<integer>\",\n  \"parentCategoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/Categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Categories"
+              ]
+            },
+            "description": "Creates a new category."
+          },
+          "response": [
+            {
+              "id": "0149bf25-3a89-4d37-a290-6be6fc3b6a6e",
+              "name": "Category created.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"order\": \"<integer>\",\n  \"parentCategoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/Categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Categories"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:31:37.000Z",
+              "updatedAt": "2026-07-28T01:31:37.000Z",
+              "uid": "35240-0149bf25-3a89-4d37-a290-6be6fc3b6a6e"
+            }
+          ],
+          "createdAt": "2026-07-28T01:31:37.000Z",
+          "updatedAt": "2026-07-28T01:31:37.000Z",
+          "uid": "35240-b1ad920c-2fb9-4bd8-b3b7-db30b6dd5790"
+        }
+      ],
+      "id": "3a6fca74-84a6-4b87-a617-cb4fe90125e7",
+      "createdAt": "2026-07-28T01:31:37.000Z",
+      "updatedAt": "2026-07-28T01:31:37.000Z",
+      "uid": "35240-3a6fca74-84a6-4b87-a617-cb4fe90125e7"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://apihub.document360.io/v2"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "888d76a0-e92b-4605-8f9d-c9054132dfa9",
+    "name": "Document360 Articles Teams API",
+    "description": "The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.\n\nContact Support:\n Name: Document360",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:31:39.000Z",
+    "updatedAt": "2026-07-28T01:31:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-888d76a0-e92b-4605-8f9d-c9054132dfa9"
+  },
+  "item": [
+    {
+      "name": "Teams",
+      "item": [
+        {
+          "name": "List Teams",
+          "id": "94b42612-458c-4a64-a711-b47b669a49a3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Teams",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Teams"
+              ]
+            },
+            "description": "Retrieves teams in the knowledge base."
+          },
+          "response": [
+            {
+              "id": "fea20f29-be52-4428-a2fe-77244caa5c5a",
+              "name": "A list of teams.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Teams",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Teams"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"memberCount\": \"<integer>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"memberCount\": \"<integer>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:31:39.000Z",
+              "updatedAt": "2026-07-28T01:31:39.000Z",
+              "uid": "35240-fea20f29-be52-4428-a2fe-77244caa5c5a"
+            }
+          ],
+          "createdAt": "2026-07-28T01:31:39.000Z",
+          "updatedAt": "2026-07-28T01:31:39.000Z",
+          "uid": "35240-94b42612-458c-4a64-a711-b47b669a49a3"
+        }
+      ],
+      "id": "5caf1231-42a3-4b85-bea6-e4e5b3d18494",
+      "createdAt": "2026-07-28T01:31:39.000Z",
+      "updatedAt": "2026-07-28T01:31:39.000Z",
+      "uid": "35240-5caf1231-42a3-4b85-bea6-e4e5b3d18494"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://apihub.document360.io/v2"
+    }
+  ]
+}

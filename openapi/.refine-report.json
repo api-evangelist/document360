@@ -1,0 +1,24 @@
+{
+  "provider": "document360",
+  "sources": [
+    "document360-articles-api-openapi.yml",
+    "document360-categories-api-openapi.yml",
+    "document360-drive-api-openapi.yml",
+    "document360-project-versions-api-openapi.yml",
+    "document360-teams-api-openapi.yml",
+    "document360-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "document360-articles-api-openapi.yml",
+    "document360-categories-api-openapi.yml",
+    "document360-drive-api-openapi.yml",
+    "document360-project-versions-api-openapi.yml",
+    "document360-teams-api-openapi.yml",
+    "document360-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

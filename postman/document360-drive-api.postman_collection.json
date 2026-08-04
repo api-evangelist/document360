@@ -1,0 +1,217 @@
+{
+  "info": {
+    "_postman_id": "93b5e046-07b4-4280-9cb1-5c3856f5cec9",
+    "name": "Document360 Articles Drive API",
+    "description": "The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.\n\nContact Support:\n Name: Document360",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:31:37.000Z",
+    "updatedAt": "2026-07-28T01:31:37.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-93b5e046-07b4-4280-9cb1-5c3856f5cec9"
+  },
+  "item": [
+    {
+      "name": "Drive",
+      "item": [
+        {
+          "name": "Folders",
+          "item": [
+            {
+              "name": "List Drive Folders",
+              "id": "bbf0e5a1-d078-416c-9237-e1e34f61dfdc",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Drive/Folders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Drive",
+                    "Folders"
+                  ]
+                },
+                "description": "Retrieves folders in the Document360 Drive."
+              },
+              "response": [
+                {
+                  "id": "c1183032-a5b3-4916-b9fa-ea7da234aa89",
+                  "name": "A list of drive folders.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "api_token",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/Drive/Folders",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "Drive",
+                        "Folders"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"parentId\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"parentId\": \"<string>\"\n  }\n]",
+                  "createdAt": "2026-07-28T01:31:38.000Z",
+                  "updatedAt": "2026-07-28T01:31:38.000Z",
+                  "uid": "35240-c1183032-a5b3-4916-b9fa-ea7da234aa89"
+                }
+              ],
+              "createdAt": "2026-07-28T01:31:38.000Z",
+              "updatedAt": "2026-07-28T01:31:38.000Z",
+              "uid": "35240-bbf0e5a1-d078-416c-9237-e1e34f61dfdc"
+            }
+          ],
+          "id": "89cbb55b-ff49-4c3e-bc9a-187d5f671428",
+          "createdAt": "2026-07-28T01:31:38.000Z",
+          "updatedAt": "2026-07-28T01:31:38.000Z",
+          "uid": "35240-89cbb55b-ff49-4c3e-bc9a-187d5f671428"
+        },
+        {
+          "name": "Files",
+          "item": [
+            {
+              "name": "List Drive Files",
+              "id": "2339a51a-ee27-48c9-a123-088c6f75e089",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/Drive/Files",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "Drive",
+                    "Files"
+                  ]
+                },
+                "description": "Retrieves files in the Document360 Drive."
+              },
+              "response": [
+                {
+                  "id": "92e21682-fdb1-4de6-bc66-8029324303ad",
+                  "name": "A list of drive files.",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "api_token",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/Drive/Files",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "Drive",
+                        "Files"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"folderId\": \"<string>\",\n    \"size\": \"<integer>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"folderId\": \"<string>\",\n    \"size\": \"<integer>\"\n  }\n]",
+                  "createdAt": "2026-07-28T01:31:38.000Z",
+                  "updatedAt": "2026-07-28T01:31:38.000Z",
+                  "uid": "35240-92e21682-fdb1-4de6-bc66-8029324303ad"
+                }
+              ],
+              "createdAt": "2026-07-28T01:31:38.000Z",
+              "updatedAt": "2026-07-28T01:31:38.000Z",
+              "uid": "35240-2339a51a-ee27-48c9-a123-088c6f75e089"
+            }
+          ],
+          "id": "e87be057-de3c-4ded-a80f-e085b50286f2",
+          "createdAt": "2026-07-28T01:31:38.000Z",
+          "updatedAt": "2026-07-28T01:31:38.000Z",
+          "uid": "35240-e87be057-de3c-4ded-a80f-e085b50286f2"
+        }
+      ],
+      "id": "bd8fddc4-36fe-4d32-80bd-d7f364f10b34",
+      "createdAt": "2026-07-28T01:31:38.000Z",
+      "updatedAt": "2026-07-28T01:31:38.000Z",
+      "uid": "35240-bd8fddc4-36fe-4d32-80bd-d7f364f10b34"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://apihub.document360.io/v2"
+    }
+  ]
+}
