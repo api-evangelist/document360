@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Document360 Articles Drive API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_token",
+      "value": "{{api_token}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Drive",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Drive Folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Drive/Folders"
+          },
+          "docs": "Retrieves folders in the Document360 Drive."
+        },
+        {
+          "info": {
+            "name": "List Drive Files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apihub.document360.io/v2/Drive/Files"
+          },
+          "docs": "Retrieves files in the Document360 Drive."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

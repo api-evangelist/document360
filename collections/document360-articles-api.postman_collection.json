@@ -1,0 +1,529 @@
+{
+  "item": [
+    {
+      "id": "1ff96be0-e6bc-4caa-ad3b-ec0d1410f4db",
+      "name": "Articles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5ae36cc1-22c5-473c-92bf-59f3584d58eb",
+          "name": "List Articles",
+          "request": {
+            "name": "List Articles",
+            "description": {
+              "content": "Retrieves articles within a Document360 knowledge base project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "projectVersionId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ecbbe89-b1ba-4843-93b2-4baa39859932",
+              "name": "A list of articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "projectVersionId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"slug\": \"string\",\n    \"content\": \"string\",\n    \"contentMarkdown\": \"string\",\n    \"categoryId\": \"string\",\n    \"projectVersionId\": \"string\",\n    \"languageCode\": \"string\",\n    \"status\": \"string\",\n    \"createdAt\": \"2001-01-15T15:03:32.098Z\",\n    \"modifiedAt\": \"2025-08-21T05:36:35.856Z\"\n  },\n  {\n    \"id\": \"string\",\n    \"title\": \"string\",\n    \"slug\": \"string\",\n    \"content\": \"string\",\n    \"contentMarkdown\": \"string\",\n    \"categoryId\": \"string\",\n    \"projectVersionId\": \"string\",\n    \"languageCode\": \"string\",\n    \"status\": \"string\",\n    \"createdAt\": \"1965-11-04T19:36:25.094Z\",\n    \"modifiedAt\": \"1950-06-09T08:06:00.556Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2979a72-4b65-4098-a039-a7c4f459a6ae",
+          "name": "Create Article",
+          "request": {
+            "name": "Create Article",
+            "description": {
+              "content": "Creates a new article in the knowledge base.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"content\": \"<string>\",\n  \"contentMarkdown\": \"<string>\",\n  \"categoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\",\n  \"languageCode\": \"<string>\",\n  \"status\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"modifiedAt\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b65470fd-6802-4bf0-ac42-177f605de8f8",
+              "name": "Article created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"content\": \"<string>\",\n  \"contentMarkdown\": \"<string>\",\n  \"categoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\",\n  \"languageCode\": \"<string>\",\n  \"status\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"modifiedAt\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"slug\": \"string\",\n  \"content\": \"string\",\n  \"contentMarkdown\": \"string\",\n  \"categoryId\": \"string\",\n  \"projectVersionId\": \"string\",\n  \"languageCode\": \"string\",\n  \"status\": \"string\",\n  \"createdAt\": \"1975-10-07T20:19:22.322Z\",\n  \"modifiedAt\": \"1966-05-02T05:53:51.468Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "434aec91-89e5-4d31-b842-ceacf8e8ac21",
+          "name": "Get Article",
+          "request": {
+            "name": "Get Article",
+            "description": {
+              "content": "Retrieves a single article by its identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07069da8-e1ba-461e-806b-879bf511f582",
+              "name": "The requested article.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"slug\": \"string\",\n  \"content\": \"string\",\n  \"contentMarkdown\": \"string\",\n  \"categoryId\": \"string\",\n  \"projectVersionId\": \"string\",\n  \"languageCode\": \"string\",\n  \"status\": \"string\",\n  \"createdAt\": \"1975-10-07T20:19:22.322Z\",\n  \"modifiedAt\": \"1966-05-02T05:53:51.468Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5129ed24-8852-4bf6-ab59-c4a86be1e9e1",
+          "name": "Update Article",
+          "request": {
+            "name": "Update Article",
+            "description": {
+              "content": "Updates an existing article.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"content\": \"<string>\",\n  \"contentMarkdown\": \"<string>\",\n  \"categoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\",\n  \"languageCode\": \"<string>\",\n  \"status\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"modifiedAt\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9989a9ea-b587-4404-b8fc-90e4dce4461f",
+              "name": "Article updated.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"slug\": \"<string>\",\n  \"content\": \"<string>\",\n  \"contentMarkdown\": \"<string>\",\n  \"categoryId\": \"<string>\",\n  \"projectVersionId\": \"<string>\",\n  \"languageCode\": \"<string>\",\n  \"status\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"modifiedAt\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3c20189-9b51-41da-9562-930f984a80f1",
+          "name": "Delete Article",
+          "request": {
+            "name": "Delete Article",
+            "description": {
+              "content": "Deletes an article.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Articles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "51ccf3ae-51f2-4b2a-9466-46f791535f84",
+              "name": "Article deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Articles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api_token",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://apihub.document360.io/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0de5e020-472e-4d49-9547-005b95bf3805",
+    "name": "Document360 Articles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.\n\nContact Support:\n Name: Document360",
+      "type": "text/plain"
+    }
+  }
+}
