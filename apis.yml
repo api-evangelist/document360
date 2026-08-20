@@ -22,6 +22,10 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/document36
 tags:
   - Documentation
   - Knowledge Base
+  - Software-as-a-Service
+tags_raw:
+  - Documentation
+  - Knowledge Base
   - SaaS
 url: https://raw.githubusercontent.com/api-evangelist/document360/refs/heads/main/apis.yml
 created: '2026-03-16'
@@ -74,6 +78,8 @@ apis:
   humanURL: https://apidocs.document360.com/
   baseURL: https://apihub.document360.io/v2
   tags:
+  - Drives
+  tags_raw:
   - Drive
   properties:
   - type: OpenAPI
@@ -114,6 +120,8 @@ apis:
   humanURL: https://apidocs.document360.com/
   baseURL: https://apihub.document360.io/v2
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
@@ -134,6 +142,8 @@ apis:
   humanURL: https://apidocs.document360.com/
   baseURL: https://apihub.document360.io/v2
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
