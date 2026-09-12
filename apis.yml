@@ -172,6 +172,8 @@ apis:
   - type: JSONLD
     url: json-ld/document360-context.jsonld
 common:
+  - type: Website
+    url: https://www.document360.com/
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/document360/overview
   - type: AgenticAccess
