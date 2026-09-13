@@ -26,6 +26,7 @@ conformance:
   soft_gaps:
   - content-type-not-ai-catalog-json
   - cors-not-wildcard
+  - did-web-does-not-resolve
   official_tool:
     tool: ARD conformance-test v0.9.1 (ards-project/ard-spec)
     status: PASS
@@ -45,6 +46,11 @@ conformance:
       media type. ARD permits extension types without core registration.'
     - '[Document360 API Catalog (RFC 9727)] Media type ''application/linkset+json'' is a valid application
       extension media type. ARD permits extension types without core registration.'
+  did_web:
+    identifier: did:web:document360.com
+    resolved: false
+    verification_methods: 0
+    http_status: 404
 catalog:
   host_display_name: Document360
   host_identifier: did:web:document360.com
