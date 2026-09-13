@@ -1,0 +1,91 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Document360",
+    "identifier": "did:web:document360.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:document360.com:server:mcp",
+      "displayName": "Document360 MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://document360.com/.well-known/mcp.json",
+      "description": "Create and publish knowledge base articles to the Document360 portal via AI agents, over streamable HTTP, protected by OAuth2.",
+      "capabilities": [
+        "ArticleCreate",
+        "ArticlePublish"
+      ],
+      "tags": [
+        "mcp",
+        "knowledge-base",
+        "documentation"
+      ],
+      "representativeQueries": [
+        "connect an AI agent to Document360",
+        "publish a knowledge base article with an AI agent",
+        "Document360 MCP server"
+      ]
+    },
+    {
+      "identifier": "urn:air:document360.com:api:openapi",
+      "displayName": "Document360 API v2 OpenAPI Spec",
+      "type": "application/yaml",
+      "url": "https://apihub.document360.io/openapi.yaml",
+      "description": "OpenAPI 3.0 description of the Document360 knowledge base management API.",
+      "tags": [
+        "api",
+        "openapi",
+        "knowledge-base"
+      ],
+      "representativeQueries": [
+        "what endpoints does the Document360 API expose",
+        "Document360 API schema"
+      ]
+    },
+    {
+      "identifier": "urn:air:document360.com:docs:api-reference",
+      "displayName": "Document360 API Reference",
+      "type": "text/html",
+      "url": "https://apidocs.document360.com/apidocs",
+      "description": "Human-readable reference for the Document360 API.",
+      "tags": [
+        "documentation",
+        "api"
+      ],
+      "representativeQueries": [
+        "Document360 API documentation",
+        "how do I authenticate with the Document360 API"
+      ]
+    },
+    {
+      "identifier": "urn:air:document360.com:catalog:api-catalog",
+      "displayName": "Document360 API Catalog (RFC 9727)",
+      "type": "application/linkset+json",
+      "url": "https://document360.com/.well-known/api-catalog",
+      "description": "RFC 9727 linkset that points to the Document360 API description, documentation, and MCP server.",
+      "tags": [
+        "catalog",
+        "rfc9727"
+      ],
+      "representativeQueries": [
+        "list the APIs Document360 publishes",
+        "Document360 API catalog"
+      ]
+    },
+    {
+      "identifier": "urn:air:document360.com:content:llms-txt",
+      "displayName": "Document360 site index for LLMs",
+      "type": "text/plain",
+      "url": "https://document360.com/llms.txt",
+      "description": "Index of Document360 pages formatted for language models.",
+      "tags": [
+        "content",
+        "llms-txt"
+      ],
+      "representativeQueries": [
+        "what does Document360 do",
+        "Document360 knowledge base platform features"
+      ]
+    }
+  ]
+}
