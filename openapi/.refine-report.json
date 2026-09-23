@@ -1,12 +1,7 @@
 {
   "provider": "document360",
   "sources": [
-    "document360-articles-api-openapi.yml",
-    "document360-categories-api-openapi.yml",
-    "document360-drive-api-openapi.yml",
-    "document360-project-versions-api-openapi.yml",
-    "document360-teams-api-openapi.yml",
-    "document360-users-api-openapi.yml"
+    "_original/document360-document360-api-openapi.yml"
   ],
   "outputs": [
     "document360-articles-api-openapi.yml",
@@ -19,6 +14,23 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "document360-document360-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "document360-document360-api-openapi.yml: declared missing tag: Articles",
+    "document360-document360-api-openapi.yml: declared missing tag: Categories",
+    "document360-document360-api-openapi.yml: declared missing tag: Drive",
+    "document360-document360-api-openapi.yml: declared missing tag: Project Versions",
+    "document360-document360-api-openapi.yml: declared missing tag: Teams",
+    "document360-document360-api-openapi.yml: declared missing tag: Users",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "document360-articles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "document360-categories-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "document360-drive-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "document360-project-versions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "document360-teams-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "document360-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
