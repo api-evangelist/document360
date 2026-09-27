@@ -48,15 +48,6 @@ paths:
                   $ref: '#/components/schemas/DriveFile'
 components:
   schemas:
-    DriveFolder:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        parentId:
-          type: string
     DriveFile:
       type: object
       properties:
@@ -70,6 +61,15 @@ components:
           type: string
         size:
           type: integer
+    DriveFolder:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        parentId:
+          type: string
   securitySchemes:
     apiToken:
       type: apiKey
