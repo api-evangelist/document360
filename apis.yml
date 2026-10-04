@@ -36,10 +36,12 @@ tags:
   - Documentation
   - Knowledge Base
   - Software-as-a-Service
+  - Knowledge Management
 tags_raw:
   - Documentation
   - Knowledge Base
   - SaaS
+  - Knowledge Management
 url: https://raw.githubusercontent.com/api-evangelist/document360/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-05-19'
@@ -172,6 +174,9 @@ apis:
   - type: JSONLD
     url: json-ld/document360-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/document360-capability-edges.yml
+    name: Document360 Business Capability Map
   - type: Website
     url: https://www.document360.com/
   - type: PostmanWorkspace
