@@ -1,0 +1,26 @@
+slug: document360
+provider: Document360
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Articles
+  spec_file: document360-articles-api-openapi.yml
+  capability_id: BC-830
+  capability_id_l1: BC-830
+  capability_name: Knowledge Management
+  confidence: 0.7
+  evidence: '"Create Article" / "Update Article" on a platform to "create, manage, and publish self-service
+    knowledge bases and documentation portals"'
+  reason: CRUD over knowledge base articles is authoring and publication of organisational knowledge content.
+    L1 Knowledge Management is well supported; ambiguous between capture (BC-830.10) and curation (BC-830.20),
+    and partly overlaps customer self-service, so no L2 asserted.
