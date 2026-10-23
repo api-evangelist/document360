@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "document360-mcp",
+    "title": "Document360 MCP Server",
+    "version": "1.0.0"
+  },
+  "description": "Easily create and publish knowledge base articles to the Document360 portal via AI agents.",
+  "documentationUrl": "https://docs.document360.com/",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://mcp.document360.io/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": true
+    }
+  },
+  "authentication": {
+    "required": true,
+    "schemes": [
+      "oauth2"
+    ]
+  }
+}

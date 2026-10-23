@@ -1,10 +1,14 @@
 aid: document360
+
 name: Document360
+
 description: >-
   Document360 is a SaaS knowledge base platform that allows teams to create, manage, and publish self-service knowledge
   bases and documentation portals. It supports version control, categories, team collaboration, analytics, and an API
   for integrating documentation into external workflows.
+
 type: Index
+
 deliveryModel:
   model: saas
   open_source: false
@@ -17,6 +21,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: freemium
   onboarding: self-serve
@@ -31,21 +36,112 @@ accessModel:
   - security
   generated: '2026-09-03'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/document360.png
+
 tags:
   - Documentation
   - Knowledge Base
   - Software-as-a-Service
   - Knowledge Management
+
 tags_raw:
   - Documentation
   - Knowledge Base
   - SaaS
   - Knowledge Management
+
 url: https://raw.githubusercontent.com/api-evangelist/document360/refs/heads/main/apis.yml
+
 created: '2026-03-16'
+
 modified: '2026-05-19'
+
 specificationVersion: '0.23'
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+
+common:
+  - type: Spectral
+    url: rules/document360-rules.yml
+  - type: Spectral
+    url: rules/document360-jsonschema-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/document360-vocabulary.yml
+  - type: DataModel
+    url: data-model/document360-data-model.yml
+  - type: Compliance
+    url: https://document360.com/compliance/soc2/
+  - type: Conformance
+    url: conformance/document360-conformance.yml
+  - type: LLMsTxt
+    url: llms/document360-llms.txt
+  - type: MCPServer
+    url: mcp/document360-mcp.yml
+  - type: WellKnown
+    url: well-known/document360-well-known.yml
+  - type: Hosts
+    url: hosts/document360-hosts.yml
+  - type: IntegrationEdges
+    url: integrations/document360-integration-edges.yml
+  - type: Vendors
+    url: vendors/document360-vendors.yml
+  - type: StatusPage
+    url: https://status.document360.com/
+  - type: SignUp
+    url: https://document360.com/signup/
+  - type: Security
+    url: https://document360.com/security/
+  - type: Leadership
+    url: https://document360.com/solutions/leadership/
+  - type: GettingStarted
+    url: https://docs.document360.com/docs/getting-started
+  - type: ChangeLog
+    url: https://document360.com/blog/release-notes/
+  - type: APIReference
+    url: https://apidocs.document360.com/apidocs
+  - type: Plans
+    url: plans/document360-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/document360-rate-limits.yml
+  - type: FinOps
+    url: finops/document360-finops.yml
+  - type: CapabilityMap
+    url: capabilities/document360-capability-edges.yml
+    name: Document360 Business Capability Map
+  - type: Website
+    url: https://www.document360.com/
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/document360/overview
+  - type: AgenticAccess
+    url: agentic-access/document360-agentic-access.yml
+  - type: TrustCenter
+    url: security/document360-trust-center.yml
+  - type: DomainSecurity
+    url: security/document360-domain-security.yml
+  - type: Authentication
+    url: authentication/document360-authentication.yml
+  - type: GitHubOrganization
+    url: https://github.com/document360
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/document360
+  - type: Portal
+    url: https://document360.com/
+  - type: Documentation
+    url: https://apidocs.document360.com/
+  - type: Pricing
+    url: https://document360.com/pricing/
+  - type: Blog
+    url: https://document360.com/blog/
+  - type: PrivacyPolicy
+    url: https://document360.com/privacy-policy/
+  - type: Support
+    url: https://support.document360.com/
+  - type: Integrations
+    url: https://document360.com/integrations/
+
 apis:
 - aid: document360:document360-articles-api
   name: Document360 Articles API
@@ -173,48 +269,7 @@ apis:
     url: json-schema/document360-category-schema.json
   - type: JSONLD
     url: json-ld/document360-context.jsonld
-common:
-  - type: Plans
-    url: plans/document360-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/document360-rate-limits.yml
-  - type: FinOps
-    url: finops/document360-finops.yml
-  - type: CapabilityMap
-    url: capabilities/document360-capability-edges.yml
-    name: Document360 Business Capability Map
-  - type: Website
-    url: https://www.document360.com/
-  - type: PostmanWorkspace
-    url: https://www.postman.com/kinlaneapi/document360/overview
-  - type: AgenticAccess
-    url: agentic-access/document360-agentic-access.yml
-  - type: TrustCenter
-    url: security/document360-trust-center.yml
-  - type: DomainSecurity
-    url: security/document360-domain-security.yml
-  - type: Authentication
-    url: authentication/document360-authentication.yml
-  - type: GitHubOrganization
-    url: https://github.com/document360
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/document360
-  - type: Portal
-    url: https://document360.com/
-  - type: Documentation
-    url: https://apidocs.document360.com/
-  - type: Pricing
-    url: https://document360.com/pricing/
-  - type: Blog
-    url: https://document360.com/blog/
-  - type: TermsOfService
-    url: https://document360.com/terms-of-service/
-  - type: PrivacyPolicy
-    url: https://document360.com/privacy-policy/
-  - type: Support
-    url: https://support.document360.com/
-  - type: Integrations
-    url: https://document360.com/integrations/
+
 integrations:
   - name: Build with Document360
   - name: buyvsbuild
@@ -272,6 +327,3 @@ integrations:
   - name: ISO
   - name: D360-ratings
   - name: kovai.co
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com

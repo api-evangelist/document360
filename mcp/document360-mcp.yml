@@ -1,0 +1,25 @@
+generated: '2026-10-23'
+method: searched
+source: https://document360.com/.well-known/mcp.json
+status: published
+description: >-
+  Document360 publishes an MCP server card at https://document360.com/.well-known/mcp.json
+  (saved verbatim as document360-mcp-server-card.json). It advertises the Document360 MCP Server,
+  streamable HTTP at https://mcp.document360.io/mcp, OAuth 2 required, for creating and publishing
+  knowledge-base articles. Setup guides: https://docs.document360.com/docs/document360-mcp.
+deployment:
+  mode: remote
+  verified: probed
+  probe: gated
+  endpoint: https://mcp.document360.io/mcp
+  transport: streamable-http
+  auth: oauth
+  probed: '2026-10-23'
+  evidence:
+  - request: GET https://document360.com/.well-known/mcp.json
+    status: 200
+  - request: POST https://mcp.document360.io/mcp (MCP initialize, no credentials)
+    status: 401
+authorization:
+  required: true
+  schemes: [oauth2]
