@@ -1,0 +1,46 @@
+{
+    "linkset": [
+        {
+            "anchor": "https://document360.com/.well-known/api-catalog",
+            "profile": [
+                {
+                    "href": "https://www.rfc-editor.org/info/rfc9727"
+                }
+            ]
+        },
+        {
+            "anchor": "https://apihub.document360.io/",
+            "service-desc": [
+                {
+                    "href": "https://apihub.document360.io/openapi.yaml",
+                    "type": "application/yaml",
+                    "title": "Document360 API v2 OpenAPI Spec"
+                }
+            ],
+            "service-doc": [
+                {
+                    "href": "https://apidocs.document360.com/apidocs",
+                    "type": "text/html",
+                    "title": "Document360 API Reference"
+                }
+            ]
+        },
+        {
+            "anchor": "https://mcp.document360.io/mcp",
+            "service-desc": [
+                {
+                    "href": "https://document360.com/.well-known/mcp.json",
+                    "type": "application/json",
+                    "title": "Document360 MCP Server Discovery"
+                }
+            ],
+            "service-doc": [
+                {
+                    "href": "https://docs.document360.com/docs/mcp",
+                    "type": "text/html",
+                    "title": "Document360 MCP Server Documentation"
+                }
+            ]
+        }
+    ]
+}

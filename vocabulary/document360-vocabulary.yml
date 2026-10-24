@@ -1,0 +1,82 @@
+generated: '2026-10-23'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/document360-articles-api-openapi.yml
+- openapi/document360-categories-api-openapi.yml
+- openapi/document360-drive-api-openapi.yml
+- openapi/document360-project-versions-api-openapi.yml
+- openapi/document360-teams-api-openapi.yml
+vocabulary:
+  name: Document360 Domain Vocabulary
+  description: 'Terms declared by Document360''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-23'
+  terms:
+  - term: Article
+    definition: 'Object declared by the contract with fields: id, title, slug, content, contentMarkdown, categoryId, projectVersionId, languageCode,
+      status, createdAt, modifiedAt.'
+    tags:
+    - Object
+    source: openapi/document360-articles-api-openapi.yml#/components/schemas/Article
+  - term: Category
+    definition: 'Object declared by the contract with fields: id, title, order, parentCategoryId, projectVersionId.'
+    tags:
+    - Object
+    source: openapi/document360-categories-api-openapi.yml#/components/schemas/Category
+  - term: DriveFile
+    definition: 'Object declared by the contract with fields: id, name, url, folderId, size.'
+    tags:
+    - Object
+    source: openapi/document360-drive-api-openapi.yml#/components/schemas/DriveFile
+  - term: DriveFolder
+    definition: 'Object declared by the contract with fields: id, name, parentId.'
+    tags:
+    - Object
+    source: openapi/document360-drive-api-openapi.yml#/components/schemas/DriveFolder
+  - term: ProjectVersion
+    definition: 'Object declared by the contract with fields: id, name, versionNumber, languageCode.'
+    tags:
+    - Object
+    source: openapi/document360-project-versions-api-openapi.yml#/components/schemas/ProjectVersion
+  - term: Team
+    definition: 'Object declared by the contract with fields: id, name, memberCount.'
+    tags:
+    - Object
+    source: openapi/document360-teams-api-openapi.yml#/components/schemas/Team
+  - term: User
+    definition: 'Object declared by the contract with fields: id, firstName, lastName, emailId, roleName.'
+    tags:
+    - Object
+    source: openapi/document360-users-api-openapi.yml#/components/schemas/User
+  - term: Articles
+    definition: 'Resource group in the contract; its operation GET /Articles: Retrieves articles within a Document360 knowledge base project.'
+    tags:
+    - Resource Group
+    source: openapi/document360-articles-api-openapi.yml
+  - term: Categories
+    definition: 'Resource group in the contract; its operation GET /Categories: Retrieves categories within a project version.'
+    tags:
+    - Resource Group
+    source: openapi/document360-categories-api-openapi.yml
+  - term: Drive
+    definition: 'Resource group in the contract; its operation GET /Drive/Folders: Retrieves folders in the Document360 Drive.'
+    tags:
+    - Resource Group
+    source: openapi/document360-drive-api-openapi.yml
+  - term: Project Versions
+    definition: 'Resource group in the contract; its operation GET /ProjectVersions: Retrieves the list of project versions in a Document360 knowledge
+      base.'
+    tags:
+    - Resource Group
+    source: openapi/document360-project-versions-api-openapi.yml
+  - term: Teams
+    definition: 'Resource group in the contract; its operation GET /Teams: Retrieves teams in the knowledge base.'
+    tags:
+    - Resource Group
+    source: openapi/document360-teams-api-openapi.yml
+  - term: Users
+    definition: 'Resource group in the contract; its operation GET /Users: Retrieves users associated with the project.'
+    tags:
+    - Resource Group
+    source: openapi/document360-users-api-openapi.yml

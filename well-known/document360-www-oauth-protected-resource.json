@@ -1,0 +1,1 @@
+{"resource":"https://mcp.document360.io/mcp","authorization_servers":["https://identity.document360.io/"],"bearer_methods_supported":["header"],"scopes_supported":["mcp"],"resource_documentation":"https://docs.document360.com/docs/mcp-server"}

@@ -1,0 +1,96 @@
+generated: '2026-10-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 8
+  own: 4
+  other_domain: 1
+  platform: 3
+  roles:
+  - docs
+  - marketing
+  - other
+  - source
+  - support
+  - website
+hosts:
+- host: apidocs.document360.com
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - Documentation
+  serves:
+  - docs
+  registrable_domain: document360.com
+  role: docs
+  relation: own
+- host: apihub.document360.io
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: document360.io
+  role: other
+  relation: other-domain
+- host: document360.com
+  found_by:
+  - pointer
+  types:
+  - Portal
+  - Pricing
+  - Blog
+  - TermsOfService
+  - PrivacyPolicy
+  - Integrations
+  serves: []
+  registrable_domain: document360.com
+  role: marketing
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: support.document360.com
+  found_by:
+  - pointer
+  types:
+  - Support
+  serves: []
+  registrable_domain: document360.com
+  role: support
+  relation: own
+- host: www.document360.com
+  found_by:
+  - pointer
+  types:
+  - Website
+  serves: []
+  registrable_domain: document360.com
+  role: website
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.postman.com
+  found_by:
+  - pointer
+  types:
+  - PostmanWorkspace
+  serves: []
+  registrable_domain: postman.com
+  role: other
+  relation: platform
