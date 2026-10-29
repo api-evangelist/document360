@@ -1,4 +1,4 @@
-# Document360 (document360)
+# Document360
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,62 +66,165 @@
 
 Document360 is a SaaS knowledge base platform that allows teams to create, manage, and publish self-service knowledge bases and documentation portals. It supports version control, categories, team collaboration, analytics, and an API for integrating documentation into external workflows.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/document360/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/document360/refs/heads/main/apis.yml)
+**Areas:** Documentation · Knowledge Base · Software-as-a-Service · Knowledge Management · API Documentation · Developer Portal
 
-## Scope
+## Document360 on APIs.io
 
-- **Type:** Index
+Everything profiled for Document360 is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/document360/](https://apis.io/providers/document360/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Documentation
-- Knowledge Base
-- SaaS
+- [Document360 Articles API](https://apis.io/apis/document360/document360-articles-api/) — The Articles API from Document360 — 2 operation(s) for articles.
+- [Document360 Categories API](https://apis.io/apis/document360/document360-categories-api/) — The Categories API from Document360 — 2 operation(s) for categories.
+- [Document360 Drive API](https://apis.io/apis/document360/document360-drive-api/) — The Drive API from Document360 — 2 operation(s) for drive.
+- [Document360 Project Versions API](https://apis.io/apis/document360/document360-project-versions-api/) — The Project Versions API from Document360 — 1 operation(s) for project versions.
+- [Document360 Teams API](https://apis.io/apis/document360/document360-teams-api/) — The Teams API from Document360 — 1 operation(s) for teams.
+- [Document360 Users API](https://apis.io/apis/document360/document360-users-api/) — The Users API from Document360 — 1 operation(s) for users.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Document360 API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Document360 API provides programmatic access to manage knowledge base projects, articles, categories, drives, files, users, and teams. It enables integrating Document360 documentation workflows into CI/CD pipelines and external applications.
+- [Document360 Agentic Access](https://apis.io/agentic-access/document360/document360-agentic-access/)
 
-- **Human URL:** [https://apidocs.document360.com/](https://apidocs.document360.com/)
-- **Base URL:** `https://apihub.document360.io/v2`
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- Documentation
-- Knowledge Base
+- [Document360 Article](https://apis.io/schemas/document360/document360-article/)
+- [Document360 Category](https://apis.io/schemas/document360/document360-category/)
 
-#### Properties
+#### JSON-LD (1)
 
+Linked-data contexts for the provider's vocabulary.
+
+- [Document360 Context](https://apis.io/jsonld/document360/document360-context/)
+
+#### Collections (13)
+
+Postman and Open Collection request collections.
+
+- [Document360 Articles API](https://apis.io/collections/document360/open-document360-articles-api/)
+- [Document360 Articles Categories API](https://apis.io/collections/document360/open-document360-categories-api/)
+- [Document360 API](https://apis.io/collections/document360/open-document360-document360-api/)
+- [Document360 Articles Drive API](https://apis.io/collections/document360/open-document360-drive-api/)
+- [Document360 Articles Project Versions API](https://apis.io/collections/document360/open-document360-project-versions-api/)
+- [Document360 Articles Teams API](https://apis.io/collections/document360/open-document360-teams-api/)
+- [Document360 Articles Users API](https://apis.io/collections/document360/open-document360-users-api/)
+- [Document360 Articles API](https://apis.io/collections/document360/postman-document360-articles-api/)
+- [Document360 Articles Categories API](https://apis.io/collections/document360/postman-document360-categories-api/)
+- [Document360 Articles Drive API](https://apis.io/collections/document360/postman-document360-drive-api/)
+- [Document360 Articles Project Versions API](https://apis.io/collections/document360/postman-document360-project-versions-api/)
+- [Document360 Articles Teams API](https://apis.io/collections/document360/postman-document360-teams-api/)
+- [Document360 Articles Users API](https://apis.io/collections/document360/postman-document360-users-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Document360 — jsonschema rules](https://apis.io/rules/document360/document360-jsonschema-spectral-rules/)
+- [Document360 API Rules](https://apis.io/rules/document360/document360-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Document360 Authentication](https://apis.io/security/document360/document360-authentication/)
+- [Document360 Domain Security](https://apis.io/security/document360/document360-domain-security/)
+- [Document360 Trust Center](https://apis.io/security/document360/document360-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Document360 Plans Pricing](https://apis.io/plans/document360/document360-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Document360 Rate Limits](https://apis.io/rate-limits/document360/document360-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Document360 Finops](https://apis.io/finops/document360/document360-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.document360.com/)
 - [Documentation](https://apidocs.document360.com/)
-- [Getting Started](https://document360.com/blog/document360-api/)
-- [OpenAPI](openapi/document360-document360-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/document360-document360-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/document360-document360-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [J S O N  Schema](json-schema/document360-article-schema.json)
-- [J S O N  Schema](json-schema/document360-category-schema.json)
-- [JSON-LD](json-ld/document360-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/document360)
-- [LinkedIn](https://www.linkedin.com/company/document360)
-- [Portal](https://document360.com/)
-- [Documentation](https://apidocs.document360.com/)
+- [Getting started](https://docs.document360.com/docs/getting-started)
+- [API reference](https://apidocs.document360.com/apidocs)
 - [Pricing](https://document360.com/pricing/)
-- [Blog](https://document360.com/blog/)
-- [Terms of Service](https://document360.com/terms-of-service/)
-- [Privacy Policy](https://document360.com/privacy-policy/)
+- [Sign up](https://document360.com/signup/)
 - [Support](https://support.document360.com/)
-- [Integrations](https://document360.com/integrations/)
+- [Changelog](https://document360.com/blog/release-notes/)
+- [Blog](https://document360.com/blog/)
+- [Security](https://document360.com/security/)
+- [Compliance](https://document360.com/compliance/soc2/)
+- [Privacy policy](https://document360.com/privacy-policy/)
+- [GitHub](https://github.com/document360)
+- [Status](https://status.document360.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 48.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 61.7 |
+| Contract quality | 63.3 |
+| Contract governance | 9.8 |
+| Operational transparency | 52.6 |
+| Developer ergonomics | 44.0 |
+| Access clarity | 47.4 |
+
+**Agent readiness 27.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/document360/](https://apis.io/providers/document360/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Document360: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/document360/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
